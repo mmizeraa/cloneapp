@@ -31,7 +31,7 @@ toastr.success('Success', 'Post Created');
  
 <div class="container-fluid">
   <div class="row h-500">
-    <div class="col my-auto">
+    <div class="col">
       <h2>Create a post</h2>
       <form action="{{ url_for('post_submit') }}" method="POST" id="post_form">
         <input type="text" placeholder="Title" name="title" required/><br>
@@ -42,10 +42,8 @@ toastr.success('Success', 'Post Created');
 </div>
 </div>
 </div>
-<div class="container-fluid">
-<div class="row h-500">
     {% for post in posts %}
-    <div class="col shadow p-3 mb-5 rounded">
+    <div class="shadow mx-auto posts p-3 mb-5 rounded">
     <p align="right">{{  post.created_at  }}</p>
     <h4>{{ post.by_user }}</h4>
     <h5>{{ post.title }}</h5>
@@ -53,8 +51,6 @@ toastr.success('Success', 'Post Created');
     </div>
     <br/>
     {% endfor %}
-    <div class = "col">
-    </div>
 </div>
 </div>
 </body>
